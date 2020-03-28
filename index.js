@@ -1,5 +1,5 @@
 setTimeout(() => {
-  console.info(`Select Country, Catagory and Enter Your API Key than Click on 'Get News', Now your News will fetching And You can see that!`);
+  console.info(`Just Select Country And Catagory than Click on 'Get News', Now your News will fetching And You can see that!`);
 }, 500);
 
 let response = document.getElementById('response')
@@ -7,7 +7,7 @@ response.innerHTML = `Submit all Imformation to Get News`
 function newsResponse() {
   const country = document.getElementById('country-input').value
   const catagory = document.getElementById('catagory-input').value
-  const api = document.getElementById('Apikey-input').value
+  const api = "4e22589fc4ec4b18bd46a08505a59da8"
   if (api == "") {
     window.alert("First input Api Key")
   } else {
@@ -21,7 +21,6 @@ function newsResponse() {
 
     const xhr7 = new XMLHttpRequest();
     xhr7.open('GET', `${pattern}`, true);
-    console.log(`Your JSON Link of ${catagory} News is : `, pattern)
     //On Progress
 
     xhr7.onprogress = function onprogress() {
@@ -64,7 +63,6 @@ function newsResponse() {
         let articles7 = json7.articles;
         let response7 = document.getElementById('Response')
 
-        console.log(articles7)
         let totalResultsJSON = json7
         let totalResults = document.getElementById('totalResults')
         let totResultHTML = `
@@ -119,6 +117,49 @@ function newsResponse() {
     }, 1000);
   }
 }
+// function more() {
+//   var more = document.getElementById('more')
+//   more.innerHTML = ""
+//   let string = `
+//     <hr>
+//     <button type="button" onclick="moreClose()" class="close" aria-label="Close">
+//       <span aria-hidden="true">&times;</span>
+//     </button>
+//     <h4>More Projects Made by Henil Malaviya</h4>
+//     <ul>
+//       <li>
+//         <h5><a href="D:/Projects/java web/Traffic Light/main.html" target="_blank">Traffic Light</a></h5>
+//       </li>
+//       <li>
+//         <h5><a href="file:///D:/Projects/java%20web/Tempture/main.html" target="_blank">Temparature Convertor</a></h5>
+//       </li>
+//       <li>
+//         <h5><a href="D:/Projects/java web/News Website/main.html" target="_blank">Top News of India</a></h5>
+//       </li>
+//       <li>
+//         <h5><a href="D:/Projects/java web/World Note/note.html" target="_blank">World Note</a></h5>
+//       </li>
+//       <li>
+//         <h5><a href="D:/Projects/java web/Product selling/main.html" target="_blank">Product Profit For MR</a></h5>
+//       </li>
+//       <li>
+//         <h5><a href="D:/Projects/java web/Calender [mini]/main.html" target="_blank">Mini Calender</a></h5>
+//       </li>
+//       <li>
+//         <h5><a id="scroll" href="D:/Projects/java web/Form 2020 with Elemenet Print/main.html" target="_blank">Form with Element Print</a></h5>
+//       </li>
+//     </ul>
+//     `
+//   more.innerHTML += string
+//   let scroll = document.getElementById('scroll')
+//   scroll.scrollIntoView({ behavior: 'smooth' })
+// }
+// function moreClose() {
+//   var more = document.getElementById('more')
+//   more.innerHTML = ""
+//   let scroll = document.getElementById('MadeBy')
+//   scroll.scrollIntoView({ behavior: "smooth" })
+// }
 function feedbackResponse() {
   var feedbackResponseDiv = document.getElementById('feedbackResponseDiv')
   let feedbackResponseDivHTML = `
