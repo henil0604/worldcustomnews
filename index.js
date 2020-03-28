@@ -5,18 +5,32 @@ setTimeout(() => {
 let response = document.getElementById('response')
 response.innerHTML = `Submit all Imformation to Get News`
 function newsResponse() {
+
+
   const country = document.getElementById('country-input').value
   const catagory = document.getElementById('catagory-input').value
-  const api = document.getElementById('Apikey-input').value
-  if (api == "") {
+  var api = document.getElementById('Apikey-input')
+  var apiLocal = localStorage.getItem('Api')
+  api.value = apiLocal
+  if (api.value == "") {
     window.alert("First input Api Key")
   } else {
-    var pattern = `https://newsapi.org/v2/top-headlines?country=${country}&category=${catagory}&apiKey=${api}`
-    var pattern2 = `https://newsapi.org/v2/top-headlines?country=${country}&apiKey=${api}`
+    var pattern = `https://newsapi.org/v2/top-headlines?country=${country}&category=${catagory}&apiKey=${api.value}`
+    var pattern2 = `https://newsapi.org/v2/top-headlines?country=${country}&apiKey=${api.value}`
     if (catagory == "Top") {
       pattern = ""
       pattern += pattern2
     }
+
+    var rememberApi = document.getElementById('rememberApi')
+    var rememberApiCheck = rememberApi.checked;
+
+    if (rememberApiCheck === true) {
+      localStorage.setItem('Api', api)
+    } else {
+
+    }
+
 
 
     const xhr7 = new XMLHttpRequest();
@@ -119,49 +133,6 @@ function newsResponse() {
     }, 1000);
   }
 }
-// function more() {
-//   var more = document.getElementById('more')
-//   more.innerHTML = ""
-//   let string = `
-//     <hr>
-//     <button type="button" onclick="moreClose()" class="close" aria-label="Close">
-//       <span aria-hidden="true">&times;</span>
-//     </button>
-//     <h4>More Projects Made by Henil Malaviya</h4>
-//     <ul>
-//       <li>
-//         <h5><a href="D:/Projects/java web/Traffic Light/main.html" target="_blank">Traffic Light</a></h5>
-//       </li>
-//       <li>
-//         <h5><a href="file:///D:/Projects/java%20web/Tempture/main.html" target="_blank">Temparature Convertor</a></h5>
-//       </li>
-//       <li>
-//         <h5><a href="D:/Projects/java web/News Website/main.html" target="_blank">Top News of India</a></h5>
-//       </li>
-//       <li>
-//         <h5><a href="D:/Projects/java web/World Note/note.html" target="_blank">World Note</a></h5>
-//       </li>
-//       <li>
-//         <h5><a href="D:/Projects/java web/Product selling/main.html" target="_blank">Product Profit For MR</a></h5>
-//       </li>
-//       <li>
-//         <h5><a href="D:/Projects/java web/Calender [mini]/main.html" target="_blank">Mini Calender</a></h5>
-//       </li>
-//       <li>
-//         <h5><a id="scroll" href="D:/Projects/java web/Form 2020 with Elemenet Print/main.html" target="_blank">Form with Element Print</a></h5>
-//       </li>
-//     </ul>
-//     `
-//   more.innerHTML += string
-//   let scroll = document.getElementById('scroll')
-//   scroll.scrollIntoView({ behavior: 'smooth' })
-// }
-// function moreClose() {
-//   var more = document.getElementById('more')
-//   more.innerHTML = ""
-//   let scroll = document.getElementById('MadeBy')
-//   scroll.scrollIntoView({ behavior: "smooth" })
-// }
 function feedbackResponse() {
   var feedbackResponseDiv = document.getElementById('feedbackResponseDiv')
   let feedbackResponseDivHTML = `
