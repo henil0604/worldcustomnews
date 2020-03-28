@@ -1,3 +1,5 @@
+console.log("Js File Launched")
+
 setTimeout(() => {
       console.info(`Select Country, Catagory and Enter Your API Key than Click on 'Get News', Now your News will fetching And You can see that!`);
     }, 500);
