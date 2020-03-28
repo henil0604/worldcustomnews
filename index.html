@@ -14,7 +14,6 @@
     html {
       scroll-behavior: smooth;
     }
-
     ::-webkit-scrollbar {
       width: 20px;
     }
@@ -104,6 +103,11 @@
     .errorDiv {
       color: Red;
     }
+		
+		#copyApi{
+			margin-bottom: 6;
+    	margin-left: 2;
+		}
   </style>
 </head>
 
@@ -211,7 +215,7 @@
       <div class="Apikey my-2">
         <h4>Api Key:</h4>
         <input spellcheck="false" class="Apikey-input" id="Apikey-input" placeholder="Enter Your API key">
-        <button class="btn btn-primary btn-sm" onclick="copyApiKey()">Copy Api Key</button>
+        <button class="btn btn-primary btn-sm" id="copyApi" onclick="copyApiKey()">Copy Api Key</button>
       </div>
       <br>
       <button class="btn btn-primary my-2" accesskey="g" onclick="newsResponse()">Get News</button>
