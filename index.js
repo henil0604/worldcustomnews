@@ -5,32 +5,18 @@ setTimeout(() => {
 let response = document.getElementById('response')
 response.innerHTML = `Submit all Imformation to Get News`
 function newsResponse() {
-
-
   const country = document.getElementById('country-input').value
   const catagory = document.getElementById('catagory-input').value
-  var api = document.getElementById('Apikey-input')
-  var apiLocal = localStorage.getItem('Api')
-  api.value = apiLocal
-  if (api.value == "") {
+  const api = document.getElementById('Apikey-input').value
+  if (api == "") {
     window.alert("First input Api Key")
   } else {
-    var pattern = `https://newsapi.org/v2/top-headlines?country=${country}&category=${catagory}&apiKey=${api.value}`
-    var pattern2 = `https://newsapi.org/v2/top-headlines?country=${country}&apiKey=${api.value}`
+    var pattern = `https://newsapi.org/v2/top-headlines?country=${country}&category=${catagory}&apiKey=${api}`
+    var pattern2 = `https://newsapi.org/v2/top-headlines?country=${country}&apiKey=${api}`
     if (catagory == "Top") {
       pattern = ""
       pattern += pattern2
     }
-
-    var rememberApi = document.getElementById('rememberApi')
-    var rememberApiCheck = rememberApi.checked;
-
-    if (rememberApiCheck === true) {
-      localStorage.setItem('Api', api)
-    } else {
-
-    }
-
 
 
     const xhr7 = new XMLHttpRequest();
