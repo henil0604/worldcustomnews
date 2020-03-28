@@ -109,21 +109,6 @@
       margin-bottom: 6;
       margin-left: 2;
     }
-
-    .rememberApi {
-      width: 15px;
-      height: 15px;
-      margin-top: 10px;
-    }
-
-    .rememberApiDiv {
-      display: flex;
-    }
-
-    .rememberApiText {
-      margin-top: 5px;
-      margin-left: 5px;
-    }
   </style>
 </head>
 
@@ -232,11 +217,6 @@
         <h4>Api Key:</h4>
         <input spellcheck="false" class="Apikey-input" id="Apikey-input" placeholder="Enter Your API key">
         <button class="btn btn-primary btn-sm" id="copyApi" onclick="copyApiKey()">Copy Api Key</button>
-        <br>
-        <div class="rememberApiDiv">
-          <input id="rememberApi" class="rememberApi" type="checkbox">
-          <p class="rememberApiText">Rember Api Key</p>
-        </div>
       </div>
       <br>
       <button class="btn btn-primary my-2" accesskey="g" onclick="newsResponse()">Get News</button>
@@ -273,10 +253,8 @@
 
 
   </div>
-
-
-
   <script src="index.js"></script>
+
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
