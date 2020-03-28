@@ -5,6 +5,7 @@ setTimeout(() => {
 let response = document.getElementById('response')
 response.innerHTML = `Submit all Imformation to Get News`
 function newsResponse() {
+
   const country = document.getElementById('country-input').value
   const catagory = document.getElementById('catagory-input').value
   const api = "4e22589fc4ec4b18bd46a08505a59da8"
