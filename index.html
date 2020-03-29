@@ -21,12 +21,15 @@
     });
 
   </script>
+
+
 </head>
 
 <body>
   <p id="scrollIsThis"></p>
   <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark" style="width: 100%;">
-    <a class="navbar-brand" id="TITLE">Welcome to Custom News</a>
+    <img src="worldNewsLogo.png" class="d-inline-block align-top" id="worldNewsLogo" alt="World News">
+    <a class="navbar-brand" id="TITLE">World Custom News</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -41,6 +44,8 @@
           <a class="nav-link" href="contactUs.html">Contact Us</a>
         </li>
       </ul>
+      <button class="btn btn-outline-warning my-2 my-sm-0" onclick="location.href = 'whatsNew.html'"" type="
+        button">What's New?</button>
     </div>
   </nav>
   <br>
@@ -136,16 +141,16 @@
 
     <h4 class="errorDiv" id="errorDiv"></h4>
     <hr style="height: 1px; background-color: rgba(0,0,0,0.6);">
-     <center>
-        <h6 class="card-subtitle mb-2 text-muted my-2">Thanks For Visiting Us.</h6>
-        <h6 class="card-subtitle mb-2 text-muted my-2">Supported For UI By <a
-            href="https://getbootstrap.com/" target="_blank">getbootstrap.com</a></h6>
-        <h6 class="card-subtitle mb-2 text-muted my-2">Supported For Json Files By <a
-            href="https://newsapi.org/" target="_blank">newsapi.org</a></h6>
-        <h6 class="card-subtitle mb-2 text-muted my-2">Give Your <button type="button" onclick="feedbackResponse()"
-            class="btn btn-secondary btn-sm" id="scroll4">Feedback</button></h6>
-      </center>
-  
+    <center>
+      <h6 class="card-subtitle mb-2 text-muted my-2">Thanks For Visiting Us.</h6>
+      <h6 class="card-subtitle mb-2 text-muted my-2">Supported For UI By <a href="https://getbootstrap.com/"
+          target="_blank">getbootstrap.com</a></h6>
+      <h6 class="card-subtitle mb-2 text-muted my-2">Supported For Json Files By <a href="https://newsapi.org/"
+          target="_blank">newsapi.org</a></h6>
+      <h6 class="card-subtitle mb-2 text-muted my-2">Give Your <button type="button" onclick="feedbackResponse()"
+          class="btn btn-secondary btn-sm" id="scroll4">Feedback</button></h6>
+    </center>
+
     <div class="my-5" id="more"></div>
     <div class="feedbackResponseDiv" id="feedbackResponseDiv"></div>
 
