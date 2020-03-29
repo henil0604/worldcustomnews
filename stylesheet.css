@@ -93,8 +93,8 @@ html {
     }
 
     #copyApi {
-      margin-bottom: 6;
-      margin-left: 2;
+      margin-bottom: 6px;
+      margin-left: 2px;
     }
 
     #faceBookIcon{
@@ -113,4 +113,5 @@ html {
     .thanksDiv{
           position: absolute;
           bottom: 20px;
+          left: 35%;
     }
