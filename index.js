@@ -1,225 +1,178 @@
-setTimeout(() => {
-    console.info(`Just Select Country And Catagory than Click on 'Get News', Now your News will fetching And You can see that!`);
-}, 500);
+<html>
 
-let response = document.getElementById('response')
-response.innerHTML = `Submit all Imformation to Get News`
-function newsResponse() {
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    const country = document.getElementById('country-input').value
-    const catagory = document.getElementById('catagory-input').value
-    const api = "4e22589fc4ec4b18bd46a08505a59da8"
-    if (api == "") {
-        window.alert("First input Api Key")
-    } else {
-        var pattern = `https://newsapi.org/v2/top-headlines?country=${country}&category=${catagory}&apiKey=${api}`
-        var pattern2 = `https://newsapi.org/v2/top-headlines?country=${country}&apiKey=${api}`
-        if (catagory == "Top") {
-            pattern = ""
-            pattern += pattern2
-        }
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <title>Home - Custom News</title>
+
+  <link rel="stylesheet" href="stylesheet.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.js"></script>
+  <script type="text/javascript">
+
+    $.getJSON("https://jsonip.com?callback=?", function (data) {
+      localStorage.setItem(`ClientIp`, " IP address is:- " + data.ip);
+    });
+
+  </script>
 
 
-        const xhr7 = new XMLHttpRequest();
-        xhr7.open('GET', `${pattern}`, true);
-        //On Progress
+</head>
 
-        xhr7.onprogress = function onprogress() {
-            console.log(`We Are Sending a Request to the Server For Your ${catagory} News.`)
-            let response = document.getElementById('response')
-            response.innerHTML = "";
-            let spin7 = ``
-            let response7 = document.getElementById('Response')
-            response7.scrollIntoView()
-            let spinHtml7 = `
-            <div class="spinner-border text-primary" role="status">
-              <span class="sr-only">Loading...</span>
-            </div>
-            `
-            spin7 += spinHtml7
-            response7.innerHTML = spin7
+<body>
+  <p id="scrollIsThis"></p>
+  <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark" style="width: 100%;">
+    <img src="worldNewsLogo.png" class="d-inline-block align-top" id="worldNewsLogo" alt="World News">
+    <a class="navbar-brand" id="TITLE">World Custom News</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-            let refreshMainDiv = document.getElementById('refreshMainDiv')
-            let refreshMainDivEmptyHTML = ``
-            let refreshMainDivHTML = `
-            <div id="refrash">
-              <img onclick="newsResponse()" onmouseover="refreshHover()" onmouseout="refreshHoverOut()" class="Refresh" src="refresh.png"></img>
-              <button type="button" onclick="newsClose()" class="close" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-              <br><br>
-              <h6 class="card-subtitle mb-2 text-muted" id="refreshAlt"></h6>
-            </div>
-          `
-            refreshMainDivEmptyHTML += refreshMainDivHTML;
-            refreshMainDiv.innerHTML = refreshMainDivEmptyHTML;
-        }
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="index.html" onclick="mainHome()">Home</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="contactUs.html">Contact Us</a>
+        </li>
+      </ul>
+      <button class="btn btn-outline-warning my-2 my-sm-0" onclick="location.href = 'whatsNew.html'"" type="
+        button">What's New?</button>
+    </div>
+  </nav>
+  <br>
+  <div class="container my-2">
 
-        //ON LOAD
+    <div class="Alert" id="Alert"></div>
 
-        xhr7.onload = function (element) {
-            if (this.status === 200) {
-                let json7 = JSON.parse(this.responseText)
+    <h6 id="MadeBy" class="card-subtitle mb-2 text-muted">-Made by Henil Malaviya</h6>
+    <br>
+    <div class="Imformation">
+      <div class="Country my-2" id="Country">
+        <h4>Country:</h4>
+        <select class="country-input" id="country-input">
+          <option id="country-input-item" value="in">India</option>
+          <option id="country-input-item" value="ar">Argentina</option>
+          <option id="country-input-item" value="au">Australia</option>
+          <option id="country-input-item" value="at">Austria</option>
+          <option id="country-input-item" value="be">Belgium</option>
+          <option id="country-input-item" value="br">Brazil</option>
+          <option id="country-input-item" value="bg">Bulgaria</option>
+          <option id="country-input-item" value="ca">Canada</option>
+          <option id="country-input-item" value="cn">China</option>
+          <option id="country-input-item" value="co">Colombia</option>
+          <option id="country-input-item" value="cu">Cuba</option>
+          <option id="country-input-item" value="cz">Czech Republic</option>
+          <option id="country-input-item" value="eg">Egypt</option>
+          <option id="country-input-item" value="fr">France</option>
+          <option id="country-input-item" value="de">Germany</option>
+          <option id="country-input-item" value="gr">Greece</option>
+          <option id="country-input-item" value="hk">Hong Kong</option>
+          <option id="country-input-item" value="hu">Hungary</option>
+          <option id="country-input-item" value="id">Indonesia</option>
+          <option id="country-input-item" value="ie">Ireland</option>
+          <option id="country-input-item" value="il">Israel</option>
+          <option id="country-input-item" value="it">italy</option>
+          <option id="country-input-item" value="jp">Japan</option>
+          <option id="country-input-item" value="lv">Latvia</option>
+          <option id="country-input-item" value="lt">Lithuania</option>
+          <option id="country-input-item" value="my">Malaysia</option>
+          <option id="country-input-item" value="mx">Maxico</option>
+          <option id="country-input-item" value="ma">Morocco</option>
+          <option id="country-input-item" value="nl">Netherlands</option>
+          <option id="country-input-item" value="nz">New Zealand</option>
+          <option id="country-input-item" value="ng">Nigeria</option>
+          <option id="country-input-item" value="no">Norway</option>
+          <option id="country-input-item" value="ph">Philippines</option>
+          <option id="country-input-item" value="pl">Poland</option>
+          <option id="country-input-item" value="pt">Portagal</option>
+          <option id="country-input-item" value="ro">Romania</option>
+          <option id="country-input-item" value="ru">Russia</option>
+          <option id="country-input-item" value="sa">Saudi Arabia</option>
+          <option id="country-input-item" value="rs">Serbia</option>
+          <option id="country-input-item" value="sg">Singapore</option>
+          <option id="country-input-item" value="sk">Slovakia</option>
+          <option id="country-input-item" value="si">Slovenia</option>
+          <option id="country-input-item" value="za">South Africa</option>
+          <option id="country-input-item" value="kr">South korea</option>
+          <option id="country-input-item" value="se">Sweden</option>
+          <option id="country-input-item" value="ch">Switzerland</option>
+          <option id="country-input-item" value="tw">Taiwan</option>
+          <option id="country-input-item" value="th">Thailand</option>
+          <option id="country-input-item" value="tr">Turkey</option>
+          <option id="country-input-item" value="ae">UAE</option>
+          <option id="country-input-item" value="us">Ukraine</option>
+          <option id="country-input-item" value="gb">United Kingdom</option>
+          <option id="country-input-item" value="us">United Status</option>
+          <option id="country-input-item" value="ve">Venuzuela</option>
+        </select>
+      </div>
+      <br>
+      <div class="Catagory my-2">
+        <h4>Catagory:</h4>
+        <select class="catagory-input" id="catagory-input">
+          <option id="catagory-input-item">Top</option>
+          <option id="catagory-input-item" value="science">Science</option>
+          <option id="catagory-input-item" value="technology">Technology</option>
+          <option id="catagory-input-item" value="health">Health</option>
+          <option id="catagory-input-item" value="business">Business</option>
+          <option id="catagory-input-item" value="sports">Sports</option>
+          <option id="catagory-input-item" value="entertainment">Entertainment</option>
+        </select>
+      </div>
+      <br>
+      <button class="btn btn-primary my-2" accesskey="g" onclick="newsResponse()">Get News</button>
+    </div>
+    <br><br>
+    <div id="refreshMainDiv" class="my-3">
+    </div>
+    <h6 class="card-subtitle mb-2 text-muted" id="response"></h6>
+    <div class="my-2" id="totalResults"></div>
+    <div class="Response" id="Response">
+    </div>
 
-                let articles7 = json7.articles;
-                let response7 = document.getElementById('Response')
+    <h4 class="errorDiv" id="errorDiv"></h4>
+    <hr style="height: 1px; background-color: rgba(0,0,0,0.6);">
+    <center>
+      <h6 class="card-subtitle mb-2 text-muted my-2">Thanks For Visiting Us.</h6>
+      <h6 class="card-subtitle mb-2 text-muted my-2">Supported For UI By <a href="https://getbootstrap.com/"
+          target="_blank">getbootstrap.com</a></h6>
+      <h6 class="card-subtitle mb-2 text-muted my-2">Supported For Json Files By <a href="https://newsapi.org/"
+          target="_blank">newsapi.org</a></h6>
+      <h6 class="card-subtitle mb-2 text-muted my-2">Give Your <button type="button" onclick="feedbackResponse()"
+          class="btn btn-secondary btn-sm" id="scroll4">Feedback</button></h6>
+    </center>
 
-                let totalResultsJSON = json7
-                let totalResults = document.getElementById('totalResults')
-                let totResultHTML = `
-                <h6 class="card-subtitle mb-2 text-muted my-2">Total ${totalResultsJSON["totalResults"]} Found but we can show you ${articles7.length} results.</h6>
-              `
-                totalResults.innerHTML = totResultHTML;
-                let newsHtml7 = "";
-                articles7.forEach(function (element, index) {
-                    if (element["content"] == null) {
-                        let news7 = `
-                    <div class="card my-4" style="width: 18 rem;">
-                      <div class="card-body">
-                        <h5 class="card-title">${++index}:- ${element["title"]}</h5>
-                        <p class="card-text" style="color:red;">Could not get this Content But You can <a id="scroll3" target="_blank" href="${element["url"]}" class="card-link">Read More Here</a></p>
-                      </div>
-                    </div>
-                    `
-                        newsHtml7 += news7;
-                    } else {
-                        let news7 = `
-                    <div class="card my-4" style="width: 18 rem;">
-                      <div class="card-body">
-                        <h5 class="card-title">${++index}:- ${element["title"]}</h5>
-                        <p class="card-text">${element["content"]}</p>
-                        <a target="_blank" href="${element["url"]}" class="card-link">Read More</a>
-                      </div>
-                    </div>
-                  `
+    <div class="my-5" id="more"></div>
+    <div class="feedbackResponseDiv" id="feedbackResponseDiv"></div>
 
-                        newsHtml7 += news7;
-                    }
-                })
-                response7.innerHTML = newsHtml7;
 
-            }
-            else {
-                console.error(' SOMETHING WENT WRONG ')
-                console.error(`${this.status} error occured!!! Please Submit right imformation to Get News`)
-                let response7 = document.getElementById('Response')
-                response7.innerHTML = ""
-                let errorDiv = document.getElementById('errorDiv')
-                errorDiv.innerHTML = `${this.status} error occured!!! Please Submit right imformation to Get News.`
-                let totalResults = document.getElementById('totalResults')
-                totalResults.innerHTML = ""
-                let response = document.getElementById('response')
-                response.innerHTML = ""
-            }
-        }
-        xhr7.send()
-        setTimeout(() => {
-            window.scrollTo(0, 446);
-        }, 1000);
-    }
-}
-function feedbackResponse() {
-    var feedbackResponseDiv = document.getElementById('feedbackResponseDiv')
-    let feedbackResponseDivHTML = `
-          <hr style="height: 1px; background-color: black;">
-          <button type="button" onclick="feedBackClose()" class="close" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-          </button> 
-            <h3 class="card-subtitle mb-2 text-muted my-2">Feedback:</h3>
-            <div class="input-group input-group-sm mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="inputGroup-sizing-sm">Feedback</span>
-              </div>
-              <textarea id="feedBackInput" type="text" class="form-control" style="min-height: 50px; min-width: 200px; max-height: 200px; height: 60px;" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Enter Your Feedback Here"></textarea>
-              <br><br>
-              <button class="btn btn-primary btn-sm" onclick="feedBackSubmit()">Submit Feedback</button>
-            </div>
-            <br>
-            <h5 id="feedbackResponseValue" class="card-subtitle mb-2 text-muted my-2"></h5>
-            <br>
-            <button type="button" id="scroll2" class="btn btn-primary btn-sm" onclick="lastFeedBack()">Last Feedback</button>
-            <br><br>
-        `
-    feedbackResponseDiv.innerHTML = feedbackResponseDivHTML
-    var scroll2 = document.getElementById('scroll2')
-    scroll2.scrollIntoView({ behavior: 'smooth' })
-}
-function feedBackSubmit() {
-    var feedBackInput = document.getElementById('feedBackInput').value
-    var feedbackResponseValue = document.getElementById('feedbackResponseValue')
-    if (feedBackInput == "") {
-        console.error("First Input Feedback")
-    }
-    else if (feedBackInput.length < 3) {
-        console.error("Your Feedback is not sufficient!")
-    }
-    else {
-        feedbackResponseValue.innerHTML = `
-            Your Feedback:- ${feedBackInput}
-          `
-        localStorage.setItem('Feedback', feedBackInput)
-        window.alert("Thanks For Your Feedback")
-    }
-}
-function lastFeedBack() {
-    var feedbackResponseValue = document.getElementById('feedbackResponseValue')
-    var lastFeedBackValue = localStorage.getItem('Feedback')
-    if (lastFeedBackValue === null) {
-        lastFeedBackValue = "You had not add any Feedback Last time!"
-    }
-    feedbackResponseValue.innerHTML = `
-          Your Last Feedback was:- ${lastFeedBackValue}
-        `
-}
-function feedBackClose() {
-    var feedbackResponseDiv = document.getElementById('feedbackResponseDiv')
-    feedbackResponseDiv.innerHTML = ""
-    let scroll = document.getElementById('MadeBy');
-    scroll.scrollIntoView({ behavior: "smooth" })
-}
-function refreshHover() {
-    let refreshAlt = document.getElementById('refreshAlt')
-    refreshAlt.innerHTML = "Refresh ?"
-}
-function refreshHoverOut() {
-    let refreshAlt = document.getElementById('refreshAlt')
-    refreshAlt.innerHTML = ""
-}
-function copyApiKey() {
-    var apiInput = document.getElementById('Apikey-input')
-    apiInput.select()
-    apiInput.setSelectionRange(0, 999999999)
-    document.execCommand('copy')
-    setTimeout(() => {
-        alert("API key Copied: " + apiInput.value)
-    }, 500);
-    console.info("API key Copied: " + apiInput.value)
-}
+  </div>
 
-function mainHome() {
-    let scroll5 = document.getElementById('scrollIsThis');
-    scroll5.scrollIntoView({ behavior: 'smooth' })
-}
+  <script src="index.js"></script>
 
-function newsClose() {
-    let confirm = window.confirm("Do You want to Close all News?")
-    if (confirm === false) {
 
-    } else {
-        let response7 = document.getElementById('Response')
-        let refreshMainDiv = document.getElementById('refreshMainDiv')
-        let totalResults = document.getElementById('totalResults')
-        totalResults.innerHTML = ""
-        refreshMainDiv.innerHTML = ""
-        response7.innerHTML = ""
 
-        let response = document.getElementById('response');
-        response.innerHTML = `Submit all Imformation to get News!`
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
 
-        let errorDiv = document.getElementById('errorDiv')
-        errorDiv.innerHTML = ""
+</body>
 
-        let scroll5 = document.getElementById('scrollIsThis');
-        scroll5.scrollIntoView({ behavior: 'smooth' })
-    }
-}
+</html>
