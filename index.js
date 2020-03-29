@@ -175,7 +175,7 @@ function feedbackResponse() {
               </div>
               <textarea id="feedBackInput" type="text" class="form-control" style="min-height: 50px; min-width: 200px; max-height: 200px; height: 60px;" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Enter Your Feedback Here"></textarea>
               <br><br>
-              <button class="btn btn-primary btn-sm" onclick="feedBackSubmit()">Submit Feedback</button>
+              <button class="btn btn-primary btn-sm" id="feedbackSubmitButton" onclick="feedBackSubmit()">Submit Feedback</button>
             </div>
             <br>
             <h5 id="feedbackResponseValue" class="card-subtitle mb-2 text-muted my-2"></h5>
