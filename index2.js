@@ -17,7 +17,7 @@ function feedbackResponse() {
             <br>
             <h5 id="feedbackResponseValue" class="card-subtitle mb-2 text-muted my-2"></h5>
             <br>
-            <button type="button" id="scroll2" class="btn btn-primary btn-sm" onclick="lastFeedBack()">Last Feedback</button>
+            <button type="button" id="scroll2" class="btn btn-primary btn-sm" id="feedbackSubmit" onclick="lastFeedBack()">Last Feedback</button>
             <br><br>
         `
     feedbackResponseDiv.innerHTML = feedbackResponseDivHTML
