@@ -1,0 +1,111 @@
+html {
+      scroll-behavior: smooth;
+    }
+
+    ::-webkit-scrollbar {
+      width: 20px;
+    }
+
+    ::-webkit-scrollbar-track {
+      box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.4);
+      border: 3px solid rgba(0, 0, 0, 0.3);
+      border-radius: 20px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 100, 256, 0.5);
+      border-radius: 23px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      transition: 1s;
+      background-color: rgba(0, 100, 256, 0.7);
+    }
+
+    .custom {
+      display: block;
+    }
+
+    .customTit {
+      font-weight: 500;
+    }
+
+    .customButton {
+      margin-top: 4px;
+      margin-left: 5px;
+      width: 70px;
+      text-align: center;
+      height: 30px;
+    }
+
+    .Apikey-input,
+    .placeholder {
+      border-radius: 3px;
+      text-align: center;
+      transition: 1s;
+      width: 300px;
+      margin-top: 2px;
+    }
+
+    .Apikey-input:focus {
+      transition: 1s;
+      color: red;
+      border: 1px solid blue;
+    }
+
+    .link {
+      margin-top: 30px;
+      margin-bottom: 5px;
+    }
+
+    .Refresh {
+      transition: 0.6s;
+      width: 30px;
+    }
+
+    .Refresh:hover {
+      transform: rotate(360deg);
+      transition: 1s;
+      cursor: pointer;
+    }
+
+    .nav-link {
+      cursor: pointer;
+    }
+
+    #navbar {
+      position: fixed;
+      top: 0;
+      z-index: 1000;
+    }
+
+    #MadeBy {
+      margin-top: 10px;
+      margin-bottom: 0;
+    }
+
+    .feedbackResponseDiv {
+      display: block;
+    }
+
+    .errorDiv {
+      color: Red;
+    }
+
+    #copyApi {
+      margin-bottom: 6;
+      margin-left: 2;
+    }
+
+    #faceBookIcon{
+        width: 35px;
+        height: 35px;
+    }
+    .facebook{
+        display: flex;
+    }
+    #facebook-link{
+        margin-top: 1px;
+        margin-left: 5px;
+        font-size: 20px;
+    }
