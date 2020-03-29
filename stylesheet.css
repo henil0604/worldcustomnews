@@ -111,5 +111,6 @@ html {
     }
 
     .thanksDiv{
+          position: absolute;
           bottom: 20px;
     }
