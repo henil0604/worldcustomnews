@@ -10,7 +10,7 @@ function feedbackResponse() {
               <div class="input-group-prepend">
                 <span class="input-group-text" id="inputGroup-sizing-sm">Feedback</span>
               </div>
-              <textarea id="feedBackInput" type="text" class="form-control" style="min-height: 50px; max-height: 200px; height: 60px;" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Enter Your Feedback Here"></textarea>
+              <textarea id="feedBackInput" type="text" class="form-control" style="min-height: 50px; min-width: 200px; max-height: 200px; height: 60px;" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Enter Your Feedback Here"></textarea>
               <br><br>
               <button class="btn btn-primary btn-sm" onclick="feedBackSubmit()">Submit Feedback</button>
             </div>
