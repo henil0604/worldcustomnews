@@ -23,9 +23,10 @@ html {
     }
 
     #worldNewsLogo{
-      width: 60px;
-      height: 40px;
-      margin-left: 2px;
+      width: 80px;
+      height: 35px;
+      border-radius: 100px;
+      margin-left: 0px;
       margin-right: 5px;
     }
 
@@ -116,7 +117,6 @@ html {
         margin-left: 5px;
         font-size: 20px;
     }
-    #feedbackSubmitButton{
+    #feedbackSubmit{
         margin-top: 100px;
     }
-    
