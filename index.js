@@ -20,7 +20,7 @@ function newsResponse() {
         }
 
 
-        const xhr7 = new XMLHttpRequest();
+        var xhr7 = new XMLHttpRequest();
         xhr7.open('GET', `${pattern}`, true);
         //On Progress
 
@@ -265,4 +265,57 @@ function newsClose() {
         let scroll5 = document.getElementById('scrollIsThis');
         scroll5.scrollIntoView({ behavior: 'smooth' })
     }
+}
+
+
+function headlineResponse() {
+    var headlineMarDiv = document.getElementById('headlineMarDiv')
+
+    const xhr8 = new XMLHttpRequest();
+
+    xhr8.open('GET', `http://newsapi.org/v2/top-headlines?country=in&apiKey=4e22589fc4ec4b18bd46a08505a59da8`, true);
+
+    //On Progress
+    xhr8.onprogress = function onprogress() {
+        headlineMarDiv.innerHTML = `
+            <div class="spinner-border text-primary" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+        `
+    }
+
+    //ON LOAD
+    xhr8.onload = function (element) {
+        if (this.status === 200) {
+            let json8 = JSON.parse(this.responseText)
+
+            let articles8 = json8.articles;
+            // console.log(articles8)
+
+            let i = -1
+
+
+            articles8.forEach(element => {
+                let title = articles8[++i].title;
+                // console.log(title);
+
+                headlineMarDiv.innerHTML = `
+                    <marquee class="headline_marquee" scrollamount="15"> <strong class="headline_no"> 1. </strong> ${articles8[0].title}  <strong> 2. </strong> ${articles8[1].title}  <strong> 3. </strong> ${articles8[2].title}  <strong> 4. </strong> ${articles8[3].title}  <strong> 5. </strong> ${articles8[4].title}  <strong> 6. </strong> ${articles8[5].title}  <strong> 7. </strong> ${articles8[6].title}  <strong> 8. </strong> ${articles8[7].title}  <strong> 9. </strong> ${articles8[8].title}  <strong> 10. </strong> ${articles8[9].title}  <strong> 11. </strong> ${articles8[10].title}  <strong> 12. </strong> ${articles8[11].title}  <strong> 13. </strong> ${articles8[12].title}  <strong> 14. </strong> ${articles8[13].title}  <strong> 15. </strong> ${articles8[14].title}  </marquee><button type="button" onclick="headlineClose()" id="close" class="close" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                `
+
+            });
+
+
+        }
+
+    }
+
+    xhr8.send()
+}
+
+function headlineClose() {
+    var headlineMarDiv = document.getElementById('headlineMarDiv')
+
+    headlineMarDiv.innerHTML = ""
 }
