@@ -273,7 +273,7 @@ function headlineResponse() {
 
     const xhr8 = new XMLHttpRequest();
 
-    xhr8.open('GET', `http://newsapi.org/v2/top-headlines?country=in&apiKey=4e22589fc4ec4b18bd46a08505a59da8`, true);
+    xhr8.open('GET', `https://newsapi.org/v2/top-headlines?country=in&apiKey=4e22589fc4ec4b18bd46a08505a59da8`, true);
 
     //On Progress
     xhr8.onprogress = function onprogress() {
