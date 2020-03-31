@@ -4,7 +4,8 @@ setTimeout(() => {
 
 let response = document.getElementById('response')
 response.innerHTML = `Submit all Imformation to Get News`
-function newsResponse() {
+function newsResponse(e) {
+    e.preventDefault()
 
     const country = document.getElementById('country-input').value
     const catagory = document.getElementById('catagory-input').value
@@ -300,7 +301,7 @@ function headlineResponse() {
                 // console.log(title);
 
                 headlineMarDiv.innerHTML = `
-                    <marquee class="headline_marquee" scrollamount="15"> <strong class="headline_no"> 1. </strong> ${articles8[0].title}  <strong> 2. </strong> ${articles8[1].title}  <strong> 3. </strong> ${articles8[2].title}  <strong> 4. </strong> ${articles8[3].title}  <strong> 5. </strong> ${articles8[4].title}  <strong> 6. </strong> ${articles8[5].title}  <strong> 7. </strong> ${articles8[6].title}  <strong> 8. </strong> ${articles8[7].title}  <strong> 9. </strong> ${articles8[8].title}  <strong> 10. </strong> ${articles8[9].title}  <strong> 11. </strong> ${articles8[10].title}  <strong> 12. </strong> ${articles8[11].title}  <strong> 13. </strong> ${articles8[12].title}  <strong> 14. </strong> ${articles8[13].title}  <strong> 15. </strong> ${articles8[14].title}  </marquee><button type="button" onclick="headlineClose()" id="close" class="close" aria-label="Close">
+                    <marquee class="headline_marquee" scrollamount="10"> <strong class="headline_no"> 1. </strong> ${articles8[0].title}  <strong class="headline_no"> 2. </strong> ${articles8[1].title}  <strong class="headline_no"> 3. </strong> ${articles8[2].title}  <strong class="headline_no"> 4. </strong> ${articles8[3].title}  <strong class="headline_no"> 5. </strong> ${articles8[4].title}  <strong class="headline_no"> 6. </strong> ${articles8[5].title}  <strong> 7. </strong class="headline_no"> ${articles8[6].title}  <strong class="headline_no"> 8. </strong> ${articles8[7].title}  <strong class="headline_no"> 9. </strong> ${articles8[8].title}  <strong class="headline_no"> 10. </strong> ${articles8[9].title}  <strong class="headline_no"> 11. </strong> ${articles8[10].title}  <strong class="headline_no"> 12. </strong> ${articles8[11].title}  <strong class="headline_no"> 13. </strong> ${articles8[12].title}  <strong class="headline_no"> 14. </strong> ${articles8[13].title}  <strong class="headline_no"> 15. </strong> ${articles8[14].title}  </marquee><button type="button" onclick="headlineClose()" id="close" class="close" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
                 `
 
