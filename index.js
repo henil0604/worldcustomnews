@@ -44,7 +44,7 @@ function newsResponse(e) {
             let refreshMainDivEmptyHTML = ``
             let refreshMainDivHTML = `
             <div id="refrash">
-              <img onclick="newsResponse()" onmouseover="refreshHover()" onmouseout="refreshHoverOut()" class="Refresh" src="refresh.png"></img>
+              <img onclick="newsResponse()" accesskey="r" onmouseover="refreshHover()" onmouseout="refreshHoverOut()" class="Refresh" src="refresh.png"></img>
               <button type="button" onclick="newsClose()" class="close" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
