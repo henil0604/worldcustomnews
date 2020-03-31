@@ -313,6 +313,7 @@ function headlineResponse() {
     }
 
     xhr8.send()
+    window.scrollTo(0,0)
 }
 
 function headlineClose() {
