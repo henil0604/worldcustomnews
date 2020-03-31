@@ -23,11 +23,11 @@ html {
     }
 
     #worldNewsLogo{
-      width: 70px;
+      width: 80px;
       height: 35px;
       border-radius: 100px;
-      margin-left: 2px;
-      margin-right: 2px;
+      margin-left: 0px;
+      margin-right: 5px;
     }
 
     .custom {
@@ -119,4 +119,29 @@ html {
     }
     #feedbackSubmit{
         margin-top: 100px;
+    }
+
+    #gmailLogo{
+      width: 35px;
+      height: 35px;
+      font-size: 35px;
+      margin-top: 15px;
+    }
+    .gmail-text{
+      font-size: 20px;
+    }
+
+    .headline_marquee{
+      margin-bottom: 15px;
+      margin-top: 0;
+      font-size: 25px;
+      background-color: #0073e6;
+      color: white;
+      border-radius: 5px;
+    }
+    #headlineMarDiv{
+      display: flex;
+    }
+    #close{
+      margin-bottom: 15px;
     }
