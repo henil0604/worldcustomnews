@@ -42,6 +42,73 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="contactUs.html">Contact Us</a>
                 </li>
+                <li class="nav-item active">
+                    <select id="country-input" class="country-nav" onchange="newsResponse()">
+                        <option id="country-input-item" value="in"><a>India</a></option>
+                        <option id="country-input-item" value="ar">Argentina</option>
+                        <option id="country-input-item" value="au">Australia</option>
+                        <option id="country-input-item" value="at">Austria</option>
+                        <option id="country-input-item" value="be">Belgium</option>
+                        <option id="country-input-item" value="br">Brazil</option>
+                        <option id="country-input-item" value="bg">Bulgaria</option>
+                        <option id="country-input-item" value="ca">Canada</option>
+                        <option id="country-input-item" value="co">Colombia</option>
+                        <option id="country-input-item" value="cu">Cuba</option>
+                        <option id="country-input-item" value="cz">Czech Republic</option>
+                        <option id="country-input-item" value="eg">Egypt</option>
+                        <option id="country-input-item" value="fr">France</option>
+                        <option id="country-input-item" value="de">Germany</option>
+                        <option id="country-input-item" value="gr">Greece</option>
+                        <option id="country-input-item" value="hu">Hungary</option>
+                        <option id="country-input-item" value="id">Indonesia</option>
+                        <option id="country-input-item" value="ie">Ireland</option>
+                        <option id="country-input-item" value="il">Israel</option>
+                        <option id="country-input-item" value="it">italy</option>
+                        <option id="country-input-item" value="jp">Japan</option>
+                        <option id="country-input-item" value="lv">Latvia</option>
+                        <option id="country-input-item" value="lt">Lithuania</option>
+                        <option id="country-input-item" value="my">Malaysia</option>
+                        <option id="country-input-item" value="mx">Maxico</option>
+                        <option id="country-input-item" value="ma">Morocco</option>
+                        <option id="country-input-item" value="nl">Netherlands</option>
+                        <option id="country-input-item" value="nz">New Zealand</option>
+                        <option id="country-input-item" value="ng">Nigeria</option>
+                        <option id="country-input-item" value="no">Norway</option>
+                        <option id="country-input-item" value="ph">Philippines</option>
+                        <option id="country-input-item" value="pl">Poland</option>
+                        <option id="country-input-item" value="pt">Portagal</option>
+                        <option id="country-input-item" value="ro">Romania</option>
+                        <option id="country-input-item" value="ru">Russia</option>
+                        <option id="country-input-item" value="sa">Saudi Arabia</option>
+                        <option id="country-input-item" value="rs">Serbia</option>
+                        <option id="country-input-item" value="sg">Singapore</option>
+                        <option id="country-input-item" value="sk">Slovakia</option>
+                        <option id="country-input-item" value="si">Slovenia</option>
+                        <option id="country-input-item" value="za">South Africa</option>
+                        <option id="country-input-item" value="kr">South korea</option>
+                        <option id="country-input-item" value="se">Sweden</option>
+                        <option id="country-input-item" value="ch">Switzerland</option>
+                        <option id="country-input-item" value="tw">Taiwan</option>
+                        <option id="country-input-item" value="th">Thailand</option>
+                        <option id="country-input-item" value="tr">Turkey</option>
+                        <option id="country-input-item" value="ae">UAE</option>
+                        <option id="country-input-item" value="us">Ukraine</option>
+                        <option id="country-input-item" value="gb">United Kingdom</option>
+                        <option id="country-input-item" value="us">United Status</option>
+                        <option id="country-input-item" value="ve">Venuzuela</option>
+                    </select>
+                </li>
+                <li class="nav-item active" id="catagory-nav">
+                    <select id="catagory-input" class="catagory-nav" onchange="newsResponse()">
+                        <option id="catagory-input-item">Top</option>
+                        <option id="catagory-input-item" value="science">Science</option>
+                        <option id="catagory-input-item" value="technology">Technology</option>
+                        <option id="catagory-input-item" value="health">Health</option>
+                        <option id="catagory-input-item" value="business">Business</option>
+                        <option id="catagory-input-item" value="sports">Sports</option>
+                        <option id="catagory-input-item" value="entertainment">Entertainment</option>
+                    </select>
+                </li>
             </ul>
             <button class="btn btn-outline-warning my-2 my-sm-0" onclick="location.href = 'whatsNew.html'"" type="
                 button">What's New?</button>
@@ -53,7 +120,7 @@
         <h6 id="MadeBy" class="card-subtitle mb-2 text-muted">-Made by Henil Malaviya</h6>
         <br>
 
-        <div class="headlineDiv" id="headlineDiv">
+        <!-- <div class="headlineDiv" id="headlineDiv">
             <div class="headlineMarDiv" id="headlineMarDiv">
             </div>
             <div class="headlineBtn" id="headlineBtn">
@@ -143,9 +210,8 @@
                 <button class="btn btn-primary my-2" type="submit" name="submit" accesskey="g"
                     onclick="newsResponse(event)">Get
                     News</button>
-            </form>
-        </div>
-        <br><br>
+            </form> -->
+        <!-- </div> -->
         <div id="refreshMainDiv" class="my-3">
         </div>
         <h6 class="card-subtitle mb-2 text-muted" id="response"></h6>
