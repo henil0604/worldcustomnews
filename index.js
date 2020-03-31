@@ -4,8 +4,9 @@ setTimeout(() => {
 
 let response = document.getElementById('response')
 response.innerHTML = `Submit all Imformation to Get News`
-function newsResponse(e) {
-    e.preventDefault()
+newsResponse()
+
+function newsResponse() {
 
     const country = document.getElementById('country-input').value
     const catagory = document.getElementById('catagory-input').value
@@ -44,7 +45,7 @@ function newsResponse(e) {
             let refreshMainDivEmptyHTML = ``
             let refreshMainDivHTML = `
             <div id="refrash">
-              <img onclick="newsResponse()" accesskey="r" onmouseover="refreshHover()" onmouseout="refreshHoverOut()" class="Refresh" src="refresh.png"></img>
+              <img onclick="newsResponse()" onmouseover="refreshHover()" onmouseout="refreshHoverOut()" class="Refresh" src="refresh.png"></img>
               <button type="button" onclick="newsClose()" class="close" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -75,22 +76,52 @@ function newsResponse(e) {
                 articles7.forEach(function (element, index) {
                     if (element["content"] == null) {
                         let news7 = `
-                    <div class="card my-4" style="width: 18 rem;">
-                      <div class="card-body">
-                        <h5 class="card-title">${++index}:- ${element["title"]}</h5>
+                    <div class="card mx-2 my-2" style="width: 32rem;">
+                    <img src="${element["urlToImage"]}" style="max-height:300px " class="card-img-top"  alt="World Custom News">
+                    <div class="card-body">
+                        <h5 class="card-title">${element["title"]}</h5>
                         <p class="card-text" style="color:red;">Could not get this Content But You can <a id="scroll3" target="_blank" href="${element["url"]}" class="card-link">Read More Here</a></p>
-                      </div>
                     </div>
-                    `
+                    </div>
+                        `
                         newsHtml7 += news7;
-                    } else {
+                    }
+
+                    else if (element["content"] == "") {
                         let news7 = `
-                    <div class="card my-4" style="width: 18 rem;">
-                      <div class="card-body">
-                        <h5 class="card-title">${++index}:- ${element["title"]}</h5>
+                    <div class="card mx-2 my-2" style="width: 32rem;">
+                    <img src="${element["urlToImage"]}" style="max-height:300px " class="card-img-top"  alt="World Custom News">
+                    <div class="card-body">
+                        <h5 class="card-title">${element["title"]}</h5>
+                        <p class="card-text" style="color:red;">Could not get this Content But You can <a id="scroll3" target="_blank" href="${element["url"]}" class="card-link">Read More Here</a></p>
+                    </div>
+                    </div>
+                        `
+                        newsHtml7 += news7;
+                    }
+
+                    else if (element["content"] == "Subscribe Start Your Daily Mornings with Times of India Newspaper!Order Now") {
+                        let news7 = `
+                    <div class="card mx-2 my-2" style="width: 32rem;">
+                    <img src="${element["urlToImage"]}" style="max-height:300px " class="card-img-top"  alt="World Custom News">
+                    <div class="card-body">
+                        <h5 class="card-title">${element["title"]}</h5>
+                        <p class="card-text" style="color:red;">The content is written for a Bussinuss Purpose so we can't show this but You can <a href="${element["url"]}">Read More Here</a></a></p>
+                    </div>
+                    </div>
+                        `
+                        newsHtml7 += news7;
+                    }
+
+                    else {
+                        let news7 = `
+                    <div class="card mx-2 my-2" style="width: 32rem;">
+                    <img src="${element["urlToImage"]}" style="max-height:300px " class="card-img-top" alt="World Custom News">
+                    <div class="card-body">
+                        <h5 class="card-title">${element["title"]}</h5>
                         <p class="card-text">${element["content"]}</p>
-                        <a target="_blank" href="${element["url"]}" class="card-link">Read More</a>
-                      </div>
+                        <a href="${element["url"]}" class="btn btn-primary">Read More</a>
+                    </div>
                     </div>
                   `
 
@@ -115,7 +146,7 @@ function newsResponse(e) {
         }
         xhr7.send()
         setTimeout(() => {
-            window.scrollTo(0, 446);
+            window.scrollTo(0, 10);
         }, 1000);
     }
 }
@@ -313,7 +344,6 @@ function headlineResponse() {
     }
 
     xhr8.send()
-    window.scrollTo(0,0)
 }
 
 function headlineClose() {
