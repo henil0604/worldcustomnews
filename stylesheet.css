@@ -163,7 +163,7 @@ html {
       -moz-appearance: none;
       -ms-appearance: none;
       appearance: none;
-      width: auto;
+      width: 100px;
       border-radius: 6px;
       display: block;
       border: 1px solid transparent;
@@ -189,7 +189,7 @@ html {
       -moz-appearance: none;
       -ms-appearance: none;
       appearance: none;
-      width: auto;
+      width: 100px;
       border-radius: 6px;
       display: block;
       border: 1px solid transparent;
@@ -206,4 +206,27 @@ html {
     
     .catagory-nav:focus{
       outline: none;
+    }
+
+    .selection{
+      display: flex;
+      margin-bottom: 20px;
+    }
+
+    .country-input{
+      margin: 10px;
+      max-height: 30px;
+      color: #ff0080;
+      font-weight: bold;
+    }
+    
+    .catagory-input{
+      margin: 10px;
+      max-height: 30px;
+      color: #ff0080;
+      font-weight: bold;
+    }
+
+    #closeNews{
+      margin-left: 700px;
     }
