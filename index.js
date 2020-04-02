@@ -45,8 +45,6 @@ function newsResponse() {
             let refreshMainDivHTML = `
             <div id="refrash">
               <img onclick="newsResponse()" onmouseover="refreshHover()" onmouseout="refreshHoverOut()" class="Refresh" src="refresh.png"></img>
-              <button type="button" onclick="newsClose()" class="close" id="closeNews" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
               </button>
               <br><br>
               <h6 class="card-subtitle mb-2 text-muted" id="refreshAlt"></h6>
@@ -227,80 +225,4 @@ function copyApiKey() {
 function mainHome() {
     let scroll5 = document.getElementById('scrollIsThis');
     scroll5.scrollIntoView({ behavior: 'smooth' })
-}
-
-function newsClose() {
-    let confirm = window.confirm("Do You want to Close all News?")
-    if (confirm === false) {
-
-    } else {
-        let response7 = document.getElementById('Response')
-        let refreshMainDiv = document.getElementById('refreshMainDiv')
-        let totalResults = document.getElementById('totalResults')
-        totalResults.innerHTML = ""
-        refreshMainDiv.innerHTML = ""
-        response7.innerHTML = ""
-
-        let response = document.getElementById('response');
-        response.innerHTML = `If you want to read news so select a country!`
-
-        let errorDiv = document.getElementById('errorDiv')
-        errorDiv.innerHTML = ""
-
-        let scroll5 = document.getElementById('scrollIsThis');
-        scroll5.scrollIntoView({ behavior: 'smooth' })
-    }
-}
-
-
-function headlineResponse() {
-    var headlineMarDiv = document.getElementById('headlineMarDiv')
-
-    const xhr8 = new XMLHttpRequest();
-
-    xhr8.open('GET', `https://newsapi.org/v2/top-headlines?country=in&apiKey=4e22589fc4ec4b18bd46a08505a59da8`, true);
-
-    //On Progress
-    xhr8.onprogress = function onprogress() {
-        headlineMarDiv.innerHTML = `
-            <div class="spinner-border text-primary" role="status">
-              <span class="sr-only">Loading...</span>
-            </div>
-        `
-    }
-
-    //ON LOAD
-    xhr8.onload = function (element) {
-        if (this.status === 200) {
-            let json8 = JSON.parse(this.responseText)
-
-            let articles8 = json8.articles;
-            // console.log(articles8)
-
-            let i = -1
-
-
-            articles8.forEach(element => {
-                let title = articles8[++i].title;
-                // console.log(title);
-
-                headlineMarDiv.innerHTML = `
-                    <marquee class="headline_marquee" scrollamount="10"> <strong class="headline_no"> 1. </strong> ${articles8[0].title}  <strong class="headline_no"> 2. </strong> ${articles8[1].title}  <strong class="headline_no"> 3. </strong> ${articles8[2].title}  <strong class="headline_no"> 4. </strong> ${articles8[3].title}  <strong class="headline_no"> 5. </strong> ${articles8[4].title}  <strong class="headline_no"> 6. </strong> ${articles8[5].title}  <strong> 7. </strong class="headline_no"> ${articles8[6].title}  <strong class="headline_no"> 8. </strong> ${articles8[7].title}  <strong class="headline_no"> 9. </strong> ${articles8[8].title}  <strong class="headline_no"> 10. </strong> ${articles8[9].title}  <strong class="headline_no"> 11. </strong> ${articles8[10].title}  <strong class="headline_no"> 12. </strong> ${articles8[11].title}  <strong class="headline_no"> 13. </strong> ${articles8[12].title}  <strong class="headline_no"> 14. </strong> ${articles8[13].title}  <strong class="headline_no"> 15. </strong> ${articles8[14].title}  </marquee><button type="button" onclick="headlineClose()" id="close" class="close" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                `
-
-            });
-
-
-        }
-
-    }
-
-    xhr8.send()
-}
-
-function headlineClose() {
-    var headlineMarDiv = document.getElementById('headlineMarDiv')
-
-    headlineMarDiv.innerHTML = ""
 }
