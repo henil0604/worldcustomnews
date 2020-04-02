@@ -1,33 +1,32 @@
-setTimeout(() => {
-    console.info(`Just Select Country And Catagory than Click on 'Get News', Now your News will fetching And You can see that!`);
-}, 500);
+console.info(`Just Select Country And Catagory than Click on 'Get News', Now your News will fetching And You can see that!`);
 
 let response = document.getElementById('response')
-response.innerHTML = `Submit all Imformation to Get News`
+response.innerHTML = `Loading...`
 newsResponse()
 
 function newsResponse() {
 
-    const country = document.getElementById('country-input').value
-    const catagory = document.getElementById('catagory-input').value
+    const country = document.getElementById('country-input')
+    const catagory = document.getElementById('catagory-input')
     const api = "4e22589fc4ec4b18bd46a08505a59da8"
     if (api == "") {
         window.alert("First input Api Key")
     } else {
-        var pattern = `https://newsapi.org/v2/top-headlines?country=${country}&category=${catagory}&apiKey=${api}`
-        var pattern2 = `https://newsapi.org/v2/top-headlines?country=${country}&apiKey=${api}`
-        if (catagory == "Top") {
+        var pattern = `https://newsapi.org/v2/top-headlines?country=${country.value}&category=${catagory.value}&apiKey=${api}`
+        var pattern2 = `https://newsapi.org/v2/top-headlines?country=${country.value}&apiKey=${api}`
+        if (catagory.value == "Top") {
             pattern = ""
             pattern += pattern2
         }
 
+        console.log(pattern);
 
         var xhr7 = new XMLHttpRequest();
         xhr7.open('GET', `${pattern}`, true);
         //On Progress
 
         xhr7.onprogress = function onprogress() {
-            console.log(`We Are Sending a Request to the Server For Your ${catagory} News.`)
+            console.log(`We Are Sending a Request to the Server For Your ${catagory.value} News.`)
             let response = document.getElementById('response')
             response.innerHTML = "";
             let spin7 = ``
@@ -46,7 +45,7 @@ function newsResponse() {
             let refreshMainDivHTML = `
             <div id="refrash">
               <img onclick="newsResponse()" onmouseover="refreshHover()" onmouseout="refreshHoverOut()" class="Refresh" src="refresh.png"></img>
-              <button type="button" onclick="newsClose()" class="close" aria-label="Close">
+              <button type="button" onclick="newsClose()" class="close" id="closeNews" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
               <br><br>
@@ -69,7 +68,7 @@ function newsResponse() {
                 let totalResultsJSON = json7
                 let totalResults = document.getElementById('totalResults')
                 let totResultHTML = `
-                <h6 class="card-subtitle mb-2 text-muted my-2">Total ${totalResultsJSON["totalResults"]} Found but we can show you ${articles7.length} results.</h6>
+                <h6 class="card-subtitle mb-2 text-muted my-2">Total <b>${totalResultsJSON["totalResults"]}</b> Found but we can show you <b>${articles7.length}</b> results.</h6>
               `
                 totalResults.innerHTML = totResultHTML;
                 let newsHtml7 = "";
@@ -132,12 +131,9 @@ function newsResponse() {
 
             }
             else {
-                console.error(' SOMETHING WENT WRONG ')
-                console.error(`${this.status} error occured!!! Please Submit right imformation to Get News`)
+                console.error(`${this.status} error occured!!! We will try to solve This Error!!!`)
                 let response7 = document.getElementById('Response')
-                response7.innerHTML = ""
-                let errorDiv = document.getElementById('errorDiv')
-                errorDiv.innerHTML = `${this.status} error occured!!! Please Submit right imformation to Get News.`
+                response7.innerHTML = `${this.status} error occured!!! We will try to solve This Error!!!.`
                 let totalResults = document.getElementById('totalResults')
                 totalResults.innerHTML = ""
                 let response = document.getElementById('response')
@@ -150,49 +146,6 @@ function newsResponse() {
         }, 1000);
     }
 }
-// function more() {
-//   var more = document.getElementById('more')
-//   more.innerHTML = ""
-//   let string = `
-//     <hr>
-//     <button type="button" onclick="moreClose()" class="close" aria-label="Close">
-//       <span aria-hidden="true">&times;</span>
-//     </button>
-//     <h4>More Projects Made by Henil Malaviya</h4>
-//     <ul>
-//       <li>
-//         <h5><a href="D:/Projects/java web/Traffic Light/main.html" target="_blank">Traffic Light</a></h5>
-//       </li>
-//       <li>
-//         <h5><a href="file:///D:/Projects/java%20web/Tempture/main.html" target="_blank">Temparature Convertor</a></h5>
-//       </li>
-//       <li>
-//         <h5><a href="D:/Projects/java web/News Website/main.html" target="_blank">Top News of India</a></h5>
-//       </li>
-//       <li>
-//         <h5><a href="D:/Projects/java web/World Note/note.html" target="_blank">World Note</a></h5>
-//       </li>
-//       <li>
-//         <h5><a href="D:/Projects/java web/Product selling/main.html" target="_blank">Product Profit For MR</a></h5>
-//       </li>
-//       <li>
-//         <h5><a href="D:/Projects/java web/Calender [mini]/main.html" target="_blank">Mini Calender</a></h5>
-//       </li>
-//       <li>
-//         <h5><a id="scroll" href="D:/Projects/java web/Form 2020 with Elemenet Print/main.html" target="_blank">Form with Element Print</a></h5>
-//       </li>
-//     </ul>
-//     `
-//   more.innerHTML += string
-//   let scroll = document.getElementById('scroll')
-//   scroll.scrollIntoView({ behavior: 'smooth' })
-// }
-// function moreClose() {
-//   var more = document.getElementById('more')
-//   more.innerHTML = ""
-//   let scroll = document.getElementById('MadeBy')
-//   scroll.scrollIntoView({ behavior: "smooth" })
-// }
 function feedbackResponse() {
     var feedbackResponseDiv = document.getElementById('feedbackResponseDiv')
     let feedbackResponseDivHTML = `
@@ -289,7 +242,7 @@ function newsClose() {
         response7.innerHTML = ""
 
         let response = document.getElementById('response');
-        response.innerHTML = `Submit all Imformation to get News!`
+        response.innerHTML = `If you want to read news so select a country!`
 
         let errorDiv = document.getElementById('errorDiv')
         errorDiv.innerHTML = ""
