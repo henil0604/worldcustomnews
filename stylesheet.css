@@ -23,7 +23,7 @@ html {
     }
 
     #worldNewsLogo{
-      width: 60px;
+      width: 70px;
       height: 35px;
       border-radius: 100px;
       margin-left: 0px;
@@ -225,8 +225,4 @@ html {
       max-height: 30px;
       color: #ff0080;
       font-weight: bold;
-    }
-
-    #closeNews{
-      margin-left: 700px;
     }
