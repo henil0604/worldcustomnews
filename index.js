@@ -1,5 +1,3 @@
-console.info(`Just Select Country And Catagory than Click on 'Get News', Now your News will fetching And You can see that!`);
-
 let response = document.getElementById('response')
 response.innerHTML = `Loading...`
 newsResponse()
@@ -19,7 +17,6 @@ function newsResponse() {
             pattern += pattern2
         }
 
-        console.log(pattern);
 
         var xhr7 = new XMLHttpRequest();
         xhr7.open('GET', `${pattern}`, true);
