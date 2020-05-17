@@ -83,7 +83,7 @@ html {
 #navbar {
   position: fixed;
   top: 0;
-  z-index: 999999999999999999;
+  z-index: 1000;
 }
 
 #MadeBy {
