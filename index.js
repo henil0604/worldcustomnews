@@ -7,7 +7,7 @@ newsResponse()
 function newsResponse() {
     const country = document.getElementById('country-input')
     const catagory = document.getElementById('catagory-input')
-    const api = "4e22589fc4ec4b18bd46a08505a59da8"
+    const api = "2c63515288264e2fafd5003fea326cd7"
     if (api == "") {
         window.alert("First input Api Key")
     } else {
